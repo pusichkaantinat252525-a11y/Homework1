@@ -1,3 +1,7 @@
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   margin: 0;
   font-family: "Montserrat", Arial, sans-serif;
@@ -16,7 +20,6 @@ body {
   position: relative;
   overflow: hidden;
 }
-
 
 .welcome__container {
   display: flex;
@@ -41,11 +44,10 @@ body {
   color: #202027;
 }
 
-
 .welcome__link {
   display: inline-block;
   box-sizing: border-box;
-  margin-top: 24px; 
+  margin-top: 24px;
   padding: 16px 28px;
   min-width: 247px;
   background-color: #202027;
@@ -57,10 +59,6 @@ body {
   text-align: center;
   text-decoration: none;
   transition: background-color 0.2s ease;
-}
-
-.welcome__link:hover {
-  background-color: #3a3a3f;
 }
 
 /* Звёзды */
@@ -114,6 +112,10 @@ body {
   top: 538px;
 }
 
+.welcome__star--mobile {
+  display: none;
+}
+
 /* Линии */
 .welcome__lines {
   position: absolute;
@@ -153,13 +155,50 @@ body {
   top: 663px;
 }
 
+/* Анимированная полоса */
+.ticker {
+  background-color: #bcec30;
+  overflow: hidden;
+}
+
+.ticker__track {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  width: max-content;
+  padding: 12px 0;
+  animation: ticker-scroll 20s linear infinite;
+}
+
+.ticker__item {
+  font-size: 24px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #202027;
+  white-space: nowrap;
+}
+
+.ticker__star {
+  color: #202027;
+  font-size: 20px;
+}
+
+@keyframes ticker-scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-33.333%);
+  }
+}
+
 /* Об играх */
 .games {
   background-color: #202027;
   padding-top: 80px;
   padding-bottom: 80px;
   position: relative;
-  overflow: hidden;  
+  overflow: hidden;
 }
 
 .games__title {
@@ -168,6 +207,10 @@ body {
   font-weight: 700;
   line-height: 78px;
   color: #ffffff;
+}
+
+.games__title--mobile {
+  display: none;
 }
 
 .games__text {
@@ -246,11 +289,6 @@ body {
   margin-top: -39px;
 }
 
-.game-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 14px 34px rgba(223, 245, 126, 0.25);
-}
-
 .game-card__img {
   display: block;
   width: 100%;
@@ -278,4 +316,306 @@ body {
   font-size: 32px;
   line-height: 39px;
   color: #202027;
+}
+
+.game-card__desc,
+.game-card__btn {
+  display: none;
+}
+/* Мини-игры */
+.mini-games {
+  background-color: #202027;
+  padding: 80px 0;
+}
+
+.mini-games__title {
+  margin: 0 0 72px;
+  font-size: 64px;
+  font-weight: 700;
+  line-height: 78px;
+  color: #ffffff;
+}
+
+.mini-games__list {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.mini-game {
+  box-sizing: border-box;
+  width: 1200px;
+  margin: 0 auto;       
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 48px;
+  padding-left: 48px;
+  background-color: #ffffff;
+  border-radius: 30px;
+  overflow: hidden;
+  text-decoration: none;
+  color: #202027;
+  box-shadow: 0 20px 67px -12px rgba(0, 0, 0, 0.13);
+}
+
+.mini-game:nth-child(even) {
+  flex-direction: row-reverse;
+  padding-left: 0;
+  padding-right: 48px;
+}
+
+.mini-game__img {
+  width: 600px;
+  height: 500px;
+  flex-shrink: 0;
+  object-fit: cover;
+}
+
+.mini-game__info {
+  box-sizing: border-box;
+  width: 504px;
+  flex-shrink: 0;
+  align-self: stretch;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 36px;
+  padding: 48px 0;
+}
+
+.mini-game__name {
+  margin: 0;
+  font-weight: 700;
+  font-size: 48px;
+  line-height: 1.2;
+  color: #202027;
+}
+
+.mini-game__desc {
+     font-weight: 400;
+    font-size: 24px;
+    line-height: 32px;
+    color: #202027;
+    flex-grow: 0;
+}
+
+
+.mini-game__btn {
+  box-sizing: border-box;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 247px;
+  padding: 16px 28px;
+  background-color: #202027;
+  border-radius: 60px;
+  color: #ffffff;
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+@media (hover: hover) {
+  .mini-game__btn:hover {
+    background-color: #3a3a3f;
+  }
+}
+  .footer {
+    background-color: #bcec30;
+    padding: 22px 0;
+  }
+
+  .footer__text {
+    margin: 0;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 20px;
+    color: #202027;
+    text-align: center;
+  }
+
+
+/* Планшетная версия */
+@media (max-width: 1024px) {
+  .container {
+    padding-left: calc(50% - 344px);
+    padding-right: calc(50% - 344px);
+  }
+}
+
+/* Мобильная версия */
+@media (max-width: 767px) {
+  .container {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  /* Добро пожаловать */
+  .welcome {
+    padding-top: 147px;
+    padding-bottom: 182px;
+  }
+
+  .welcome__container {
+    align-items: center;
+    gap: 36px;
+  }
+
+  .welcome__title {
+    font-size: 40px;
+    line-height: 49px;
+    text-align: center;
+  }
+
+  .welcome__text {
+    width: 296px;
+    font-size: 16px;
+    line-height: 24px;
+    text-align: center;
+  }
+
+  .welcome__text br {
+    display: none;
+  }
+
+  .welcome__link {
+    width: 296px;
+    height: 50px;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 0;
+    font-size: 16px;
+  }
+
+  /* десктопные звёзды и линии прячем */
+  .welcome__star-1,
+  .welcome__star-2,
+  .welcome__line-1,
+  .welcome__line-2,
+  .welcome__line-3,
+  .welcome__line-4 {
+    display: none;
+  }
+
+  .welcome__star-3 {
+    width: 35px;
+    height: 35px;
+    left: 38px;
+    top: 97px;
+  }
+
+  .welcome__star-4 {
+    width: 21px;
+    height: 21px;
+    left: 92px;
+    top: 64px;
+  }
+
+  .welcome__star-5 {
+    box-sizing: border-box;
+    position: absolute;
+    width: 39px;
+    height: 41px;
+    left: 304px;
+    top: 580px;
+  }
+
+  .welcome__star-6 {
+    box-sizing: border-box;
+    position: absolute;
+    width: 18px;
+    height: 18px;
+    left: 273px;
+    top: 557px;
+  }
+
+  /* Большая мобильная звезда — в правом верхнем углу */
+  .welcome__star--mobile {
+    display: block;
+    top: 0;
+    right: -30px;
+  }
+
+  /* Блок 'Об играх' */
+  .games__title,
+  .games__text {
+    display: none;
+  }
+    .mini-games {
+    display: none;
+  }
+
+  /* Блок 'Мини-игры' */
+  .games__title--mobile {
+    display: block;
+    margin: 0 0 24px;
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 49px;
+    color: #ffffff;
+  }
+
+  .games {
+    padding-top: 48px;
+    padding-bottom: 48px;
+  }
+
+  /* Карточки-одна колонка*/
+  .games__grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .games__grid .game-card {
+    height: auto;
+    margin-top: 0;
+    border-radius: 27px;
+  }
+  .game-card__img {
+    height: 284px;
+}
+   .game-card__label {
+    display: none;
+  }
+  .game-card__info {
+    display: flex;
+    flex-direction: column;
+    padding: 29px 29px 33px;
+  }
+
+  .game-card__name {
+    margin: 0;
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 39px;
+    color: #202027;
+  }
+
+  .game-card__desc {
+           display: block;
+        margin: 16px 0px 32px;
+        font-size: 16px;
+        line-height: 20px;
+        color: #000000;
+  }
+
+  .game-card__btn {
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 9px;
+    width: 100%;
+    padding: 16px 0;
+    background-color: #202027;
+    border: 1px solid #202027;
+    border-radius: 60px;
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: 600;
+  }
+ 
 }

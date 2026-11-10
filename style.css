@@ -187,7 +187,7 @@ body {
 .games {
   background-color: #202027;
   padding-top: 80px;
-  padding-bottom: 80px;
+  padding-bottom: 50px;
   position: relative;
   overflow: hidden;
 }
@@ -317,7 +317,7 @@ body {
 /* Мини-игры */
 .mini-games {
   background-color: #202027;
-  padding: 80px 0;
+  padding: 46px 0;
 }
 
 .mini-games__title {
@@ -373,7 +373,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 36px;
+  gap: 24px;
   padding: 48px 0;
 }
 
@@ -415,17 +415,18 @@ body {
 }
 
 .footer {
-  background-color: #bcec30;
-  padding: 22px 0;
+  height: 150px;
+    background: #BDED35;
 }
 
 .footer__text {
-  margin: 0;
-  font-size: 16px;
-  font-weight: 600;
-  line-height: 20px;
-  color: #202027;
-  text-align: center;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 29px;
+    text-align: center;
+    color: #000000;
+    margin: 0;
+    padding: 60px;
 }
 
 /* Планшетная версия */
@@ -582,5 +583,12 @@ body {
 
   .mini-game__btn {
     width: 100%;
+  }
+  .footer__text {
+    margin: 0;
+    font-size: 16px;
+    line-height: 20px;
+    font-weight: 600;
+    text-align: center;
   }
 }

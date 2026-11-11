@@ -318,6 +318,14 @@ body {
   display: none;
 }
 
+.game-card:hover {
+  transform: scale(1.02);
+}
+
+.mini-game:hover {
+  transform: scale(1.02);
+}
+
 /* Мини-игры */
 .mini-games {
   background-color: #202027;
